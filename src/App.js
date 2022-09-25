@@ -17,12 +17,23 @@ function App() {
     <div className='ml-5 mr-5'>
     <Swiper
       spaceBetween={20}
-      slidesPerView={3}
+     
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
+      breakpoints={{
+    300: {
+      // width: 300,
+      width: 300,
+      slidesPerView: 1,
+    },
+    768: {
+      // width: 768,
+      slidesPerView: 3,
+    },
+  }}
     >
          {Users.map((user) => (
            <SwiperSlide key={user.id}>
